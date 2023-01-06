@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Date</title>
+	</head>
+	<body>
+		<script>
+		function getTime()
+		{
+			var now = new Date();
+			alert(now.getFullYear());
+			alert(now.getMonth()+1);
+			alert(now.getDate());
+			alert(now.getHours());
+			alert(now.getMinutes());
+			alert(now.getSeconds());
+		}
+
+		function setTime()
+		{
+			var now = new Date();
+			var year = document.getElementById("year").value;
+			var month = document.getElementById("month").value;
+			now.setYear(year);
+			now.setMonth(month);
+			alert(now.getFullYear());
+			alert(now.getMonth());
+			alert(now.getDate());
+			alert(now.getHours());
+			alert(now.getMinutes());
+			alert(now.getSeconds());
+		}
+
+		function getGMTString()
+		{
+			var now = new Date();
+			alert(now.toGMTString());
+		}
+
+		function getLocalString()
+		{
+			var now = new Date();
+			alert(now.toLocaleString());
+		}
+		</script>
+
+		Year:<input type="text" id="year" /><br />
+		Month:<input type="text" id="month" /><br />
+
+		<input type="button" value="弹出" onclick="getTime();" /> <input type="button" value="设置" onclick="setTime();" /> <input type="button" value="GMT" onclick="getGMTString();" /> <input type="button" value="Local" onclick="getLocalString();" />
+	</body>
+</html>

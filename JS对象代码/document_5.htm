@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>document</title>
+	</head>
+	<body>
+		<script>
+			function getForm_1()
+			{
+				var form = document.forms[0];
+				alert(form.elements[0].value);
+				alert(form.elements[1].value);
+			}
+			function getForm_2()
+			{
+				alert(document.Myform.oText.value);
+				alert(document.Myform.oPswd.value);
+			}
+		</script>
+		<form name="Myform">   
+			<input type="text" name="oText" />   
+			<input type="password" name="oPswd" />   
+		<form>   
+		<br />
+		<input type="button" value="获取_1" onclick="getForm_1();" /><br />
+		<input type="button" value="获取_2" onclick="getForm_2();" />
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>confirm</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			//alert(encodeURIComponent(location.search));
+			
+			function checkform()
+			{
+				if(confirm("确定提交?"))
+				{
+					//alert("true");
+					return true;
+				}
+				else
+				{
+					//alert("false");
+					return false;
+				}
+			}
+		</script>
+		<form name="form1" method="post" action="#123" onsubmit="return checkform()">
+			<input type="submit" value="提交" />
+		</form>
+	</body>
+</html>

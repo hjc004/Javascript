@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>Array</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		function useJoin()
+		{
+			var a = new Array(3);
+			a[0] = 1;
+			a[1] = 2;
+			a[2] = 3;
+			alert(a.join()); //1,2,3
+		}
+
+		function useReverse()
+		{
+			var a = new Array(3);
+			a[0] = 1;
+			a[1] = 2;
+			a[2] = 3;
+			a.reverse();
+			alert(a.join()); //3,2,1
+		}
+		</script>
+
+		<input type="button" value="JOIN" onclick="useJoin();" /> <input type="button" value="REVERSE" onclick="useReverse();" />
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>document</title>
+	</head>
+	<body>
+		<script>
+			var a = 1;
+			function getImages()
+			{
+				var images = document.images;
+				for(var i=0; i<images.length; i++)
+				{
+					alert(images[i].width);	
+				}	
+			}
+			
+			function changeImage()
+			{
+				var image = document.getElementById("img_2");
+				if(a==1)
+				{
+					image.src = "1.jpg";
+					a = 2;
+				}
+				else
+				{
+					image.src = "2.jpg";
+					a = 1;
+				}
+			}
+		</script>
+		<div id="layer">
+			<img src="1.jpg" alt="1" />
+			<img src="2.jpg" alt="2" id="img_2" />
+		</div>
+		<input type="button" value="获取" onclick="getImages();" /><br />
+		<input type="button" value="变换" onclick="changeImage();" />
+	</body>
+</html>

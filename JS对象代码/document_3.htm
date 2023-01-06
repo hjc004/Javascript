@@ -1,0 +1,24 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>document</title>
+	</head>
+	<body>
+		<script>
+			function getInputs()
+			{
+				var inputs = document.getElementsByName("layInput");
+				for(var i=0; i<inputs.length; i++)
+				{
+					alert(inputs[i].value);	
+				}	
+			}
+		</script>
+		<div id="layer">
+			<input type="text" name="layInput" value="1" /><br />
+			<input type="text" name="layInput" value="2" /><br />
+			<input type="text" name="layInput" value="3" />
+		</div>
+		<input type="button" value="获取" onclick="getInputs();" />
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>document</title>
+	</head>
+	<body>
+		<script>
+			function hide()
+			{
+				var layer = document.getElementById("layer");
+				layer.style.display = "none";
+			}
+			function show()
+			{
+				var layer = document.getElementById("layer");
+				layer.style.display = "block";
+			}
+		</script>
+		<div id="layer" style="border:solid 1px #999; background-color:#e8e8e8; width:200px; height:100px; padding:20px; text-align:center; margin:20px;">�����㿴�����ˣ�</div>
+		<input type="button" value="显示ʾ" onclick="show();" />
+		<input type="button" value="隐藏" onclick="hide();" />
+	</body>
+</html>
