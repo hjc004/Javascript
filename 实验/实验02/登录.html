@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>登录</title>
+        <link href="登录.css" rel="stylesheet" media="all" />
+    </head>
+    <body>
+        <script>
+            function getCookie(c_name)
+			{
+			if (document.cookie.length>0)
+			{
+			c_start=document.cookie.indexOf(c_name + "=")
+			if (c_start!=-1)
+				{ 
+				c_start=c_start + c_name.length+1 
+				c_end=document.cookie.indexOf(";",c_start)
+				if (c_end==-1) c_end=document.cookie.length
+				return unescape(document.cookie.substring(c_start,c_end))
+				} 
+			}
+			return ""
+			}
+
+			function setCookie(c_name,value,expiredays)
+			{
+			var exdate=new Date()
+			exdate.setDate(exdate.getDate()+expiredays)
+			document.cookie=c_name+ "=" +escape(value)+
+			((expiredays==null) ? "" : ";expires="+exdate.toGMTString())
+			}
+            function RemUser()
+			{
+                setCookie("name", document.getElementById("txtUserName").value, 30);
+                setCookie("password", document.getElementById("txtPassword").value, 30);
+            }
+        </script>
+
+        <!--顶部导航栏-->
+        <div id="homepage-header">
+            <div id="LOGO">
+                <img src="LOGO.png" alt="LOGO" />
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="">主页</a></li>
+                    <li><a href="">吉他介绍</a></li>
+                    <li><a href="">吉他品牌</a></li>
+                    <li><a href="">相关设备及配件</a></li>
+                    <li><a href="">吉他保养及调整</a></li>
+                    <li><a href="">资源区</a></li>
+                </ul>
+            </div>
+            <div id="left-btn">
+                <a href="">
+                    <img src="search.png" alt="search" />
+                </a>
+                <button class="btn"><a href="">注册/登录</a></button>
+            </div>
+        </div>
+        <div class="fixfloat"></div>
+
+        <!--主体-->
+        <div id="container">
+            <div class="container_view">
+ 
+                <div class="loading  fixfloat">
+                    <h1 class="t">
+                        <i class="icon"></i>
+                        欢迎登录Guitar Club
+                    </h1>
+
+                    <form action="" method="GET">
+                        <div class="formbox">
+                            <div class="inputbox">
+                                <div class="formName">
+                                    <em style="color: red;">*</em>
+                                    用户名：
+                                </div>
+                                <div class="formInput">
+                                    <input type="text" name="userName" id="txtUserName" placeholder=" 3-15位字符，可由字母、数字及下划线组成" maxlength="15" >
+                                </div>
+                                <div class="fixfloat"></div>
+                            </div>
+                            <div class="inputbox">
+                                <div class="formName" >
+                                    <em style="color: red;">*</em>
+                                    密码：
+                                </div>
+                                <div class="formInput">
+                                    <input type="password" name="password" id="txtPassword" placeholder=" 6-20位字符，可由字母、数字及特殊字符组成" maxlength="20" >
+                                </div>
+                                <div class="fixfloat"></div>
+                            </div>
+                                    
+                            <button class="nextbtn" onclick="RemUser()">
+                                <a class="nextstep" href="个人中心.html" style="text-decoration: none;">登录（记住我）</a>
+                            </button>
+
+                            <div class="register">没有账号？
+                                <a href="注册1.html">立即注册</a>
+                            </div>
+    
+                            <div class="fixfloat"></div>
+                        </div>
+                    </form>
+    
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+			if(getCookie("name") != "")
+			{
+				document.getElementById("txtUserName").value = getCookie("name");
+			}
+
+		</script>
+
+    </body>
+</html>

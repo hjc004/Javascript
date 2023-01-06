@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>选项卡</title>
+        <link href="选项卡美化.css" rel="stylesheet" media="all" />
+    </head>
+    <body>
+        <div id = "tab">
+            <ul class="head">
+            <li id="btn1" class="on">图片</li>
+            <li id="btn2" class="off">专栏</li>
+            <li id="btn3" class="off">热点</li>
+            </ul>
+            <div id="box1" id="firstPage" class="show">
+                <img src="#" alt="图片1">
+                <img src="#" alt="图片1">
+                <img src="#" alt="图片1"><br/>
+                <ul id="add">
+                    <li id="li1"><a href = "#">瑞士滑雪场雪崩10余人被埋 竣工10年11栋楼成危房</a></li>
+                    <li id="li2"><a href = "#">普京第15次发表国情咨文 五台山出土石刻造像34尊</a></li>
+                    <li id="li3"><a href = "#">孕妇穿泳衣高山滑雪成网红 “兵马俑巧克力”受追捧</a></li>
+                    <li id="li4"><a href = "#">景甜藕吊带裙满满少女心 华晨宇花花世界千面少年</a></li>
+                </ul>
+            </div>
+            <div id="box2" id="secondPage" class="hide">
+                <img src="#" alt="图片1">
+                <img src="#" alt="图片1">
+                <img src="#" alt="图片1"><br/>
+                <ul>
+                    <li><a href = "#"></a></li>
+                    <li><a href = "#"></a></li>
+                    <li><a href = "#"></a></li>
+                    <li><a href = "#"></a></li>
+                </ul>
+            </div>
+            <div id="box3" id="thirdPage" class = "hide">
+                <img src="#" alt="图片1">
+                <img src="#" alt="图片1">
+                <img src="#" alt="图片1"><br/>
+                <ul>
+                    <li><a href = "#"></a></li>
+                    <li><a href = "#"></a></li>
+                    <li><a href = "#"></a></li>
+                    <li><a href = "#"></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="guanggao">
+            <img id="image" src="21_reflection_8k.jpg" οnmοusedοwn="secound(this)" οnmοuseup="first(this)">
+            <button οnclick="change()">点击换图片</button>
+        </div>
+        
+    </body>
+    <script>
+        for(var i=1; i<4; i++)
+        {
+            document.getElementById("btn" + i).onclick = function () {
+                for(var j=1; j<4; j++)
+                {
+                    document.getElementById("box" + j).style.display = "none";
+                }
+                var str = this.id.substring(3,this.id.length);      //截取btn后面的数字
+                document.getElementById("box" + str).style.display = "block";
+            }
+        }
+        window.onload = function()
+        {
+            var myTab = document.getElementById("tab");    //整个div
+            var myUl = myTab.getElementsByTagName("ul")[0];//一个节点
+            var myLi = myUl.getElementsByTagName("li");    //数组
+            var myDiv = myTab.getElementsByTagName("div"); //数组
+
+            for(var i = 0; i<myLi.length;i++)
+            {
+                myLi[i].index = i;
+                myLi[i].onclick = function()
+                {
+                    for(var j = 0; j < myLi.length; j++)
+                    {
+                        myLi[j].className="off";
+                        myDiv[j].className = "hide";
+                    }
+                    this.className = "on";
+                    myDiv[this.index].className = "show";
+                }
+            }
+        }
+        //DOM添加元素
+        var para = document.createElement("li");
+        var node = document.createTextNode("一条新的新闻");
+        para.appendChild(node);
+        var element = document.getElementById("add");
+        element.appendChild(para);
+
+        //DOM删除元素
+        var parent = document.getElementById("add");
+        var child = document.getElementById("li1");
+        parent.removeChild(child);
+
+        //图片广告位
+        function change() 
+        {
+            var x = document.getElementById("image").getAttribute("src");
+ 
+            if (x=="21_reflection_8k.jpg")
+            {
+                document.getElementById("image").src="16_fly_8k.jpg";
+            }
+            else
+            {
+                document.getElementById("image").src="21_reflection_8k.jpg";
+            }
+            //alert(x);
+        }
+ 
+        function secound(obj)
+        {
+            obj.src="16_fly_8k.jpg";
+            console.log(obj.getAttribute("src"));
+        }
+ 
+        function first(obj)
+        {
+            obj.src="21_reflection_8k.jpg";
+            console.log(obj.getAttribute("src"));
+        }
+
+    </script>
+</html>

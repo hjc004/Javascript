@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>open</title>
+		<meta charset="utf-8" />
+	</head>
+	<body>
+
+		<input type="text" id="txtUserName" onclick="RemUser()" />
+		<button id="btnNoRem" onclick="NoRemUser()">发布</button>
+
+		<script>
+			function RemUser()
+			{
+				localStorage.setItem("name", document.getElementById("txtUserName").value);
+			}
+			function NoRemUser()
+			{
+                localStorage.removeItem("name");
+                txtUserName.value = "";
+            }
+            
+            setInterval(RemUser,1000);
+		</script>
+	</body>
+</html>

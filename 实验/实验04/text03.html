@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#userName").blur(function(){
+                    if($("#userName").val().length > 5)
+                    {
+                        $("#tips").html("输入用户名超过最大长度限制(5个字符)！");
+                    }
+                    else
+                    {
+                        $("#tips").html("输入成功！");
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        用户名：<input type="text" id="userName" placeholder="长度不超过5个字符" />
+        <span id="tips"></span>
+    </body>
+</html>

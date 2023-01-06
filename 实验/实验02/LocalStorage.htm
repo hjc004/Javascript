@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>open</title>
+		<meta charset="utf-8" />
+	</head>
+	<body>
+
+		<input type="text" id="txtUserName" />
+		<button id="btnRem" onclick="RemUser()">记住我</button>
+		<button id="btnNoRem" onclick="NoRemUser()">忘记我</button>
+
+		<script>
+			function RemUser()
+			{
+				localStorage.setItem("name", document.getElementById("txtUserName").value);
+			}
+			function NoRemUser()
+			{
+				localStorage.removeItem("name");
+			}
+		</script>
+	</body>
+</html>

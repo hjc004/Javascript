@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>index</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#news").load("新闻.html");
+
+                getUserData();
+                function getUserData(){
+                    var Option = {
+                        url: encodeURI('/Handler/AuthAccounts.ashx?action=getloginstate'),
+                        type: "post",
+                        dataType: 'text',
+                        cache: false, //设置为 false 将不会从浏览器缓存中加载请求信息。
+                        async: true, //(默认: true)，所有请求均为异步请求。发送同步请求，请将此选项设置为 false。同步请求将锁住浏览器，用户其它操作必须等待请求完成才可以执行。
+                        timeout: 150000, //设置请求超时时间（毫秒）。此设置将覆盖全局设置。
+                        error: function (){},
+                        success: function (data, textStatus)
+                        {
+                            if (data == null || data == undefined)
+                            {
+                                return false;
+                            }
+                            jsondata = eval('(' + data + ')');
+                            if (jsondata.state == "success")
+                            {
+                                var weburl = '<a class="username">欢迎你,' + jsondata.message.split('|')[1] + '</a><a class="go_out" onclick="ExitLoginState()">退出</a>';
+                                $("#state_content").html(weburl); //内容
+                            }else
+                            {
+                                var textList = '<a href="/Login/index.shtml" rel="external nofollow" rel="external nofollow" >【登录】</a><a href="/Register/index.shtml" rel="external nofollow" rel="external nofollow" >【注册】</a>';
+                                $("#state_content").html(textList); //内容
+                                }
+                            },
+                        beforeSend: function (){}
+                    };
+                    jQuery.ajax(Option);
+                    return false;
+                };
+                
+                function ExitLoginState(){
+                    var Option = {
+                        url: encodeURI('/Handler/AuthAccounts.ashx?action=exitloginstate'),
+                        type: "post",
+                        dataType: 'text',
+                        cache: false, //设置为 false 将不会从浏览器缓存中加载请求信息。
+                        async: true, //(默认: true)，所有请求均为异步请求。发送同步请求，请将此选项设置为 false。同步请求将锁住浏览器，用户其它操作必须等待请求完成才可以执行。
+                        timeout: 150000, //设置请求超时时间（毫秒）。此设置将覆盖全局设置。
+                        error: function (){},
+                        success: function (data, textStatus)
+                        {
+                            if (data == null || data == undefined)
+                            {
+                                return false;
+                            }
+                            jsondata = eval('(' + data + ')');
+                            if (jsondata.state == "success")
+                            {
+                                alert("已经退出");
+                                var textList = '<a href="/Login/index.shtml" rel="external nofollow" rel="external nofollow" >【登录】</a><a href="/Register/index.shtml" rel="external nofollow" rel="external nofollow" >【注册】</a>';
+                                $("#state_content").html(textList); //内容
+                            }
+                        },
+                        beforeSend: function (){}
+                    };
+                    jQuery.ajax(Option);
+                    return false;
+                };
+            });
+        </script>
+    </head>
+    <body>
+        <div id="news"></div>
+    </body>
+</html>

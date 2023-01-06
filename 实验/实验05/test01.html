@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <script src="https://cdn.bootcss.com/jquery/3.5.0/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $(this).css({"color":"#fff"})
+                $(".menu-value").parent().css({"background":"#272727"});
+            });
+        </script>
+
+        <style type="text/css">
+            body,ul,li,a
+            {
+                padding: 0;
+                margin: 0;
+            }
+            body
+            {
+                background-color:#e6e6e6;
+                color: #fff; 
+            }
+            .menu
+            {
+                font-size: 0;
+                padding: 0;
+                height: 50px;
+                padding-left: 5%;
+                background-color: #272727;
+                position: relative;
+            }
+            .menubar
+            {
+                margin: 0 auto;
+                position: absolute;
+                list-style-type: none;
+                width: 100%;
+                overflow-y: auto;
+            }
+         
+            .menubar li
+            {
+                padding:0px 5px;
+                display:inline-block;
+                cursor: pointer;
+                line-height: 50px;		
+            }
+            .menubar li:hover
+            {
+            background-color:#EA7500;
+            }
+            .menubar li.menu-value
+            {
+                background-color: #EA7500;	
+            }
+         
+            .menubar a
+            {
+                display: block;
+                height: 50px;
+                font-family: "微软雅黑","Microsoft Yahei","Hiragino Sans GB",tahoma,arial,"宋体" ;
+                font-size: 15px;
+                text-align: center;
+                text-decoration: none;
+                color: #fff;
+            }
+         
+        </style>
+    </head>
+    <body>
+        <div class="menu">
+            <ul class="menubar">
+                <li class="menu-value"><a href="test01.html">主页</a></li>
+                <li class=""><a href="test02.html">第二页</a></li>
+                <li class=""><a href="test03.html">第三页</a></li>
+                <li class=""><a href="">第四页</a></li>
+                <li class=""><a href="">第五页</a></li>
+            </ul>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="utf-8" />
+                <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js">
+                </script>
+        </head>
+        <script>
+                $(document).ready(function(){
+                    $.get("/getNews",function(data,status){
+                        var news = JSON.parse(data);
+                        for(var i=0; i<news.length; i++)
+                        {
+                            var li = $("<li></li>");
+                            var a = $("<a href='detail?newsId=" + news[i].NewsId + "'>" + news[i].NewsTitle + "</a>");
+                            li.append(a);
+                            $("ul").append(li);
+                        }
+                    });
+                });
+        </script>
+<body>
+    <ul>
+        
+    </ul>
+   
+</body>
+</html>
+

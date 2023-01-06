@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>选项卡</title>
+        <link href="选项卡美化.css" rel="stylesheet" media="all" />
+    </head>
+    <body>
+        <!-- <button onclick="show(1)">1</button>
+        <button onclick="show(2)">2</button>
+        <button onclick="show(3)">3</button> -->
+
+        <button id="btn1">1</button>
+        <button id="btn2">2</button>
+        <button id="btn3">3</button>
+
+        <div id="box1">box1</div>
+        <div id="box2">box2</div>
+        <div id="box3">box3</div>
+    </body>
+    <script>
+        // function show(j)
+        // {
+        //     for(var i=1; i<4; i++)
+        //     {
+        //         document.getElementById("box" + i).style.display = "none";
+        //     }
+        //     document.getElementById("box" + j).style.display = "block";
+        // }
+        // show(1);
+
+        for(var i=1; i<4; i++)
+        {
+            document.getElementById("btn" + i).onclick = function () {
+                for(var j=1; j<4; j++)
+                {
+                    document.getElementById("box" + j).style.display = "none";
+                }
+                var str = this.id.substring(3,this.id.length);      //截取btn后面的数字
+                document.getElementById("box" + str).style.display = "block";
+            }
+        }
+    </script>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>底部</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+        <style type="text/css">
+            /*底部*/
+            #footer {
+                width: 100%;
+                background: rgba(128, 128, 128, 0.075);
+                position: relative;
+                bottom: -80px;
+                padding: 35px 0px 0px 0px;
+                
+            }
+            #footer .fotbox {
+                width: 200px;
+                border-right: 1px solid rgba(128, 128, 128, 0.26);
+            }
+            #footer ul {
+                list-style: none;
+            }
+            #footer ul li .tips {
+                font-size: 14px;
+                color: gray;
+                margin-bottom: 15px;
+            }
+            #footer ul li .cards {
+                margin: 10px;
+                padding-top: 5px;
+                font-size: 16px;
+            }
+            /*清除漂浮*/
+            .fixfloat { clear: both;}
+        </style>
+    </head>
+    <body>
+        <!--底部-->
+        <div id="footer">
+            <div class="fotbox" style="position: relative;top: 0px;left: 200px;">
+                <ul>
+                    <li>
+                        <div class="tips">Guitar Club</div>
+                        <div class="cards">
+                            <a href="">关于我们</a>
+                        </div>
+                        <div class="cards">
+                            <a href="">联系我们</a>
+                        </div>
+                        <div class="cards">
+                            <a href="">加入我们</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="fotbox" style="position: relative;top: -144px;left: 500px;">
+                <ul>
+                    <li>
+                        <div class="tips">传送门</div>
+                        <div class="cards">
+                            <a href="">导航页</a>
+                        </div>
+                        <div class="cards">
+                            <a href="">个人中心</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="fixfloat"></div>
+
+    </body>
+</html>

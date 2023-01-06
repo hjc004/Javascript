@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("button").click(function(){
+                    $("#box1").hide();
+                    $("#box2").hide();
+                    $("#box3").hide();
+                    $("#box" + $(this).attr("id")).show();  //拿id属性
+                    $(this).text();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+            <button id="1">新闻</button>
+            <button id="2">体育</button>
+            <button id="3">娱乐</button>
+        </div>
+        <div id="box1">box1</div>
+        <div id="box2">box2</div>
+        <div id="box3">box3</div>
+    </body>
+</html>

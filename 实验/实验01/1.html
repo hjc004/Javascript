@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8' />
+        <script>
+            $(document).ready(function(){
+                alert($("#test"));
+            })
+        </script>
+    </head>
+    <body>
+        <form action="2.html" method="POST">
+            <input id="txtUserName" type="text" name="txtUserName" />
+            <input id="txtUserPwd" type='password' name="txtUserPwd" />
+            <!-- <button class="btn" onclick="jump()"></button> -->
+            <input type="submit" name="" />
+        </form>    
+        <!-- <script>
+            function jump(){
+                var name = document.getElementById("txtUserName").value;
+                var pwd = document.getElementById("txtUserPwd").value;
+                location.href = "2.html?txtUserName+" + name + "&txtUserPwd" + pwd;
+            }
+        </script> -->
+    </body>
+</html>

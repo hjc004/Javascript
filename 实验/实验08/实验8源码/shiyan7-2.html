@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
+    <script>
+            $(document).ready(function(){
+                $.get("/getNews",function(data,status){
+                    var news = JSON.parse(data);
+                    for(var i=0; i<news.length; i++)
+                    {
+                        var li = $("<li></li>");
+                        var a = $("<a href='shiyan7-3.html?newsId=" + news[i].NewsId + "'>" + news[i].NewsTitle + " &nbsp时间：" +"</a>");
+                        var b = $("<a href='shiyan7-3.html?newsId=" + news[i].NewsId + "'>" + news[i].NewsTime + " &nbsp作者：" +"</a>");
+                        var c = $("<a href='shiyan7-3.html?newsId=" + news[i].NewsId + "'>" + news[i].NewsWriter + "</a>");
+                        li.append(a);
+                        li.append(b);
+                        li.append(c);
+                        $("ul").append(li);
+                    }
+                });
+            });
+    </script>
+<body>
+    <ul>
+        
+    </ul>
+   
+</body>
+</html>
+

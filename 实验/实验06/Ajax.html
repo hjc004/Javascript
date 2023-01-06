@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Ajax异步加载</title>
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                // $("p").load("test.html", function(){    //load方法
+                //     $("h1").css({"color":"green"});
+                // });
+
+                // $.get("test.html", function(data, status){    //get方法
+                //     $("p").html(data);
+                // });
+
+                // $.get("test.html", function(data, status){
+                //     var getObject = JSON.parse(data);       //JSON方法
+                //     alert(getObject.a);
+                // });
+
+                $("#up").load("导航条.htm");
+                $("#middle").load("中部.htm", function(){
+                    $("h1").css({"color":"#52a3ff"});
+                });
+                $("#down").load("底部.htm");
+            });
+        </script>
+    </head>
+    <body>
+        <div id="up"></div>
+        <div id="middle"></div>
+        <div id="down"></div>
+    </body>
+</html>
